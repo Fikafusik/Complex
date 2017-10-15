@@ -72,3 +72,10 @@ complex operator-(const complex &lc, const complex &rc) {
 complex operator*(const complex &lc, const complex &rc) {
     return complex(lc.re * rc.re - lc.im * rc.im, lc.im * rc.re + lc.re * rc.im);
 }
+
+complex operator/(const complex &lc, const complex &rc) {
+    // TODO: sqr(a) = a * a; (need new header for math function)
+    double m = rc.re * rc.re + rc.im * rc.im;
+    // TODO: if (m == 0) return error("Dividing by zero");
+    return complex((lc.re * rc.re + lc.im * rc.im) / m, (lc.im * rc.re - rc.re * rc.im) / m);
+}
