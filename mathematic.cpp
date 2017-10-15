@@ -1,7 +1,6 @@
 
 #include "mathematic.hpp"
 
-double sqr(double n)
-{
-    return n*n;
+double sqr(double n) {
+    return n * n;
 }
