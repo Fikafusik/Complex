@@ -6,7 +6,7 @@ class complex {
 public:
     double re;
     double im;
-public:
+
     complex();
     complex(double, double);
     complex(const complex &);
