@@ -13,6 +13,12 @@ double root(double, int);
 double sqrt(double);
 double cbrt(double);
 
+double log(double, double);
+
+double lg(double);
+double ln(double);
+double lb(double);
+
 // BIG TODO BLOCK. Tolyan)0)):
 double sin(double);
 double cos(double);

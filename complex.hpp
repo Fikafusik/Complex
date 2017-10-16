@@ -13,7 +13,6 @@ public:
     
     complex conjugate();
 
-    // TODO: implementation (need sqrt(a))
     double modulus();
 
     const complex & operator =(const complex &);
@@ -34,5 +33,12 @@ complex operator/(const complex &, const complex &);
 
 bool operator==(const complex &, const complex &);
 bool operator!=(const complex &, const complex &);
+
+complex arcsin(const complex &);
+complex arccos(const complex &);
+complex arctan(const complex &);
+complex arccot(const complex &);
+complex arcsec(const complex &);
+complex arccsc(const complex &);
 
 #endif
