@@ -1,6 +1,7 @@
 
 #include <cstdio>
 #include "mathematic.hpp"
+#include "combinatorics.hpp"
 
 const double    a = 1.01;
 const int       n = 1000;
@@ -18,6 +19,9 @@ int main() {
     double c = cbrt(b);
 
     printf("\n%f\t%f\t%f\t%f\n%f\t%f\t%f\n\n", npr, npi, bpr, bpi, r, s, c);
+    
+    combinatorics comb(20);
+    printf("%lld\t%lld\n\n", comb.C(17, 5), native_C(17, 5));
 
     return 0;
 }
