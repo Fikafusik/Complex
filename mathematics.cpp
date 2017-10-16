@@ -1,5 +1,5 @@
 
-#include "mathematic.hpp"
+#include "mathematics.hpp"
 #include "algorithms.hpp"
 
 double sqr(double n) {

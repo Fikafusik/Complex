@@ -1,6 +1,6 @@
 
 #include "primes.hpp"
-#include "mathematic.hpp"
+#include "mathematics.hpp"
 
 sieve_of_eratosthenes::sieve_of_eratosthenes(int max_number) {
     sieve = new bool[max_number + 1];

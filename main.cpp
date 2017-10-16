@@ -1,15 +1,15 @@
 
 #include <cstdio>
-#include "mathematic.hpp"
+#include "mathematics.hpp"
 
-void mathematic_test();
+void mathematics_test();
 
 int main() {
-    mathematic_test();
+    mathematics_test();
 }
 
-void mathematic_test() {
-    printf("-> Hello, I'm mathematic_test!\n");
+void mathematics_test() {
+    printf("-> Hello, I'm mathematics_test()!\n");
     
     const double    a = 1.01;
     const int       n = 1000;

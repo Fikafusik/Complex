@@ -32,4 +32,7 @@ complex operator-(const complex &, const complex &);
 complex operator*(const complex &, const complex &);
 complex operator/(const complex &, const complex &);
 
+bool operator==(const complex &, const complex &);
+bool operator!=(const complex &, const complex &);
+
 #endif

@@ -1,19 +1,19 @@
 
-objects = main.o complex.o mathematic.o algorithms.o combinatorics.o primes.o
-executable = complex_test
+objects = main.o complex.o mathematics.o algorithms.o combinatorics.o primes.o
+executable = FTkL
 compiler = g++
 
 all: $(objects)
 	$(compiler) -o $(executable) $(objects)
 
-main.o: main.cpp complex.hpp mathematic.hpp algorithms.hpp combinatorics.hpp primes.hpp
+main.o: main.cpp complex.hpp mathematics.hpp algorithms.hpp combinatorics.hpp primes.hpp
 	$(compiler) -c main.cpp
 
 complex.o: complex.cpp
 	$(compiler) -c complex.cpp
 
-mathematic.o: mathematic.cpp algorithms.hpp
-	$(compiler) -c mathematic.cpp
+mathematics.o: mathematics.cpp algorithms.hpp
+	$(compiler) -c mathematics.cpp
 
 algorithms.o: algorithms.cpp 
 	$(compiler) -c algorithms.cpp

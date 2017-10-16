@@ -1,5 +1,6 @@
 
 #include "complex.hpp"
+#include "mathematics.hpp"
 
 complex::complex() {
     this->re = 0;
@@ -18,6 +19,10 @@ complex::complex(const complex &c) {
 
 complex complex::conjugate() {
     return complex(this->re, -this->im);
+}
+
+double complex::modulus() {
+    return sqrt(sqr(this->re) + sqr(this->im));
 }
 
 const complex & complex::operator =(const complex &rc) {
@@ -45,8 +50,7 @@ const complex & complex::operator*=(const complex &rc) {
 }
 
 const complex & complex::operator/=(const complex &rc) {
-    // TODO: sqr(a) = a * a; (need new header for math function)
-    double m = rc.re * rc.re + rc.im * rc.im;
+    double m = sqr(rc.re) + sqr(rc.im);
     // TODO: if (m == 0) return error("Dividing by zero");
     this->re = (this->re * rc.re + this->im * rc.im) / m;
     this->im = (this->im * rc.re - this->re * rc.im) / m;
@@ -74,8 +78,15 @@ complex operator*(const complex &lc, const complex &rc) {
 }
 
 complex operator/(const complex &lc, const complex &rc) {
-    // TODO: sqr(a) = a * a; (need new header for math function)
-    double m = rc.re * rc.re + rc.im * rc.im;
+    double m = sqr(rc.re) + sqr(rc.im);
     // TODO: if (m == 0) return error("Dividing by zero");
     return complex((lc.re * rc.re + lc.im * rc.im) / m, (lc.im * rc.re - rc.re * rc.im) / m);
+}
+
+bool operator==(const complex &lc, const complex &rc) {
+    return (lc.re == rc.re && lc.im == rc.im);
+}
+
+bool operator!=(const complex &lc, const complex &rc) {
+    return (lc.re != rc.re || lc.im != rc.im);
 }
