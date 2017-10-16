@@ -1,12 +1,12 @@
 
-objects = main.o complex.o mathematic.o algorithms.o combinatorics.o
+objects = main.o complex.o mathematic.o algorithms.o combinatorics.o primes.o
 executable = complex_test
 compiler = g++
 
 all: $(objects)
 	$(compiler) -o $(executable) $(objects)
 
-main.o: main.cpp complex.hpp mathematic.hpp algorithms.hpp combinatorics.hpp
+main.o: main.cpp complex.hpp mathematic.hpp algorithms.hpp combinatorics.hpp primes.hpp
 	$(compiler) -c main.cpp
 
 complex.o: complex.cpp
@@ -20,6 +20,9 @@ algorithms.o: algorithms.cpp
 
 combinatorics.o: combinatorics.cpp
 	$(compiler) -c combinatorics.cpp
-	
+
+primes.o: primes.cpp
+	$(compiler) -c primes.cpp
+
 clean:
 	rm $(objects)
