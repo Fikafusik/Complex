@@ -50,9 +50,8 @@ double cbrt(double a) {
     return root(a, 3);
 }
 
-//Trigonometry (from Tolyan))0)
-
-const double pi = 3.1415926536;
+//Trigonometry:
+const double pi = 3.14159265358979323846;
 
 double sin(double a) {
     double last;
@@ -63,11 +62,21 @@ double sin(double a) {
     last = a * (1 - (sqra / sqrpi));
     for (int i = 2; i > 1; ++i) {
         res = last * (1 - (sqra / (sqrpi * sqr(i))));
-        if (res == last) return res;
-        else last = res;
+        if (res == last) 
+            return res;
+        else 
+            last = res;
     }
 }
 
 double cos(double a) {
     return sin(a + (pi / 2));
+}
+
+double tan(double a) {
+    return sin(a) / cos(a);
+}
+
+double cot(double a) {
+    return cos(a) / sin(a);
 }
