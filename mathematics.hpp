@@ -20,8 +20,8 @@ double ln(double);
 double lb(double);
 
 // BIG TODO BLOCK. Tolyan)0)):
-double sin(double);
-double cos(double);
+double sin(double); //Done
+double cos(double); //Done
 double tan(double);
 double cot(double);
 double sec(double);

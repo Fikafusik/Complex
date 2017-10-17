@@ -29,6 +29,15 @@ void mathematics_test() {
     double c = cbrt(b);
 
     printf("%f\t%f\t%f\n", r, s, c);
-    
+
+    const double pi = 3.1415926536;
+
+    double a1 = pi / 2;
+    double a2 = pi / 3;
+    double a3 = pi / 6;
+
+    printf("%f\t%f\t%f\n", sin(a1), sin(a2), sin(a3));
+    printf("%f\t%f\t%f\n", cos(a1), cos(a2), cos(a3));
+
     printf("-> \n");
 }

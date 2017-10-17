@@ -49,3 +49,25 @@ double sqrt(double a) {
 double cbrt(double a) {
     return root(a, 3);
 }
+
+//Trigonometry (from Tolyan))0)
+
+const double pi = 3.1415926536;
+
+double sin(double a) {
+    double last;
+    double res;
+    double sqra = a * a;
+    double sqrpi = pi * pi;
+
+    last = a * (1 - (sqra / sqrpi));
+    for (int i = 2; i > 1; ++i) {
+        res = last * (1 - (sqra / (sqrpi * sqr(i))));
+        if (res == last) return res;
+        else last = res;
+    }
+}
+
+double cos(double a) {
+    return sin(a + (pi / 2));
+}
