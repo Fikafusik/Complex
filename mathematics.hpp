@@ -19,7 +19,7 @@ double lg(double);
 double ln(double);
 double lb(double);
 
-// BIG TODO BLOCK. Tolyan)0));
+// BIG TODO BLOCK. Tolyan)0)):
 double sin(double); //Done
 double cos(double); //Done
 double tan(double);
