@@ -20,12 +20,13 @@ double ln(double);
 double lb(double);
 
 // BIG TODO BLOCK. Tolyan)0)):
-double sin(double); //Done;
+double sin(double); //Done, but slow;
 double cos(double); //Done;
 double tan(double); //Done;
 double cot(double); //Done;
-double sec(double);
-double csc(double);
+double sec(double); //Done;
+double csc(double); //Done;
+//All is based on sin();
 
 double sinh(double);
 double cosh(double);
