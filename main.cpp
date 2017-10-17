@@ -29,6 +29,12 @@ void mathematics_test() {
     double c = cbrt(b);
 
     printf("%f\t%f\t%f\n", r, s, c);
+
+    double a1 = 3.14 / 2;
+    double a2 = 3.14 / 3;
+    double a3 = 3.14 / 6;
+
+    printf("%f\t%f\t%f\n", sin(a1), sin(a2), sin(a3));
     
     printf("-> \n");
 }

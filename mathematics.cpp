@@ -49,3 +49,17 @@ double sqrt(double a) {
 double cbrt(double a) {
     return root(a, 3);
 }
+
+//Trigonometry (from Tolyan))0)
+
+double sin(double angle) {
+    double last;
+    double res;
+
+    last = angle * (1 - sqr(angle) / sqr(3.14));
+    for (int i = 2; i > 1; ++i) {
+        res = last * (1 - sqr(angle) / (sqr(3.14) * sqr(i)));
+        if (res == last) return res;
+        else last = res;
+    }
+}
