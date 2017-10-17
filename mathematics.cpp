@@ -80,3 +80,11 @@ double tan(double a) {
 double cot(double a) {
     return cos(a) / sin(a);
 }
+
+double sec(double a) {
+    return 1 / cos(a);
+}
+
+double csc(double a) {
+    return 1 / sin(a);
+}
