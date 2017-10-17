@@ -52,14 +52,22 @@ double cbrt(double a) {
 
 //Trigonometry (from Tolyan))0)
 
-double sin(double angle) {
+const double pi = 3.1415926536;
+
+double sin(double a) {
     double last;
     double res;
+    double sqra = a * a;
+    double sqrpi = pi * pi;
 
-    last = angle * (1 - sqr(angle) / sqr(3.14));
+    last = a * (1 - (sqra / sqrpi));
     for (int i = 2; i > 1; ++i) {
-        res = last * (1 - sqr(angle) / (sqr(3.14) * sqr(i)));
+        res = last * (1 - (sqra / (sqrpi * sqr(i))));
         if (res == last) return res;
         else last = res;
     }
+}
+
+double cos(double a) {
+    return sin(a + (pi / 2));
 }
