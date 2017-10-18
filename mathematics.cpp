@@ -1,4 +1,5 @@
 
+#include <cstdio>
 #include "mathematics.hpp"
 #include "algorithms.hpp"
 
@@ -69,28 +70,29 @@ double sin(double a) {
     }
 }*/
 
-//Fast but incorrect
+//(not)Fast but incorrect
 double sin(double a) {
     double last = a;
     double res;
     double x = a;
-    int sign = 1;
-    int factorial = 1;
-    int n = 1;
+    double sign = 1;
+    double factorial = 1;
+    double n = 1;
     const double sqrA = a * a;
 
-    for (int n = 2; n > 1; ++n) {
+    do {
+        ++n;
+        last = res;
         sign *= -1;
         x *= sqrA;
         factorial *= (2 * n - 1) * (2 * n - 2);
 
         res = last + ((x * sign) / factorial);
+        
+        printf("%f\n", res);
+    } while (last != res);
 
-        if (res == last)
-            return res;
-        else
-            last = res;
-    }
+    return res;
 }
 
 double cos(double a) {

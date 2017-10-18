@@ -32,7 +32,7 @@ void mathematics_test() {
 
     const double pi = 3.14159265358979323846;
 
-    double a1 = pi / 2;
+    double a1 = pi / -2;
     double a2 = pi / 3;
     double a3 = pi / 6;
 
