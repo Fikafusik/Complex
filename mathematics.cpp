@@ -52,7 +52,7 @@ double cbrt(double a) {
 
 //Trigonometry:
 const double pi = 3.14159265358979323846;
-
+/*Correct but slow
 double sin(double a) {
     double last;
     double res;
@@ -65,6 +65,30 @@ double sin(double a) {
         if (res == last) 
             return res;
         else 
+            last = res;
+    }
+}*/
+
+//Fast but incorrect
+double sin(double a) {
+    double last = a;
+    double res;
+    double x = a;
+    bool k;
+    int factorial = 1;
+    int n = 1;
+    const double sqrA = a * a;
+
+    for (int n = 2; n > 1; ++n) {
+        k = n && 1;
+        x *= sqrA;
+        factorial = factorial * (2 * n - 1) * (2 * n - 2);
+
+        res = last + ((x * (k ? -1 : 1)) / factorial);
+
+        if (res == last)
+            return res;
+        else
             last = res;
     }
 }
