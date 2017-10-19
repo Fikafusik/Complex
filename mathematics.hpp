@@ -4,6 +4,7 @@
 
 extern const double pi;
 
+double abs(double);
 double sqr(double);
 
 double native_power_resursion(double, int);

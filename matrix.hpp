@@ -9,6 +9,7 @@ public:
     matrix();
     matrix(int, int);
     
+    matrix & operator*=(const matrix &rm);
 };
 
 #endif
