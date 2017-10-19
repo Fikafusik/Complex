@@ -1,11 +1,14 @@
 
 #include <cstdio>
 #include "mathematics.hpp"
+#include "algorithms.hpp"
 
 void mathematics_test();
+void algorithms_test();
 
 int main() {
     mathematics_test();
+    algorithms_test();
 }
 
 void mathematics_test() {
@@ -37,9 +40,35 @@ void mathematics_test() {
     double a3 = pi / 6;
 
     printf("%f\t%f\t%f\n", sin(a1), sin(a2), sin(a3));
-    printf("%f\t%f\t%f\n", cos(a1), cos(a2), cos(a3));
-    printf("%f\t%f\t%f\n", tan(a1), tan(a2), tan(a3));
-    printf("%f\t%f\t%f\n", cot(a1), cot(a2), cot(a3));
+
+    printf("-> \n");
+}
+
+
+
+void algorithms_test() {
+    printf("-> Hello, I'm algorithms_test()!\n");
+
+    int a = 5;
+    int b = 10;
+
+    printf("Swap<int>:\n");
+    printf("%d\t%d\n", a, b);
+    swap(a, b);
+    printf("%d\t%d\n", a, b);
+
+    double c = 3.14;
+    double d = 5.26;
+
+    printf("\nSwap<double>:\n");
+    printf("%f\t%f\n", c, d);
+    swap(c, d);
+    printf("%f\t%f\n\n", c, d);
+
+    printf("Max(%d, %d) = %d\n", a, b, max(a, b));
+    printf("Min(%d, %d) = %d\n", a, b, min(a, b));
+    printf("Max(%f, %f) = %f\n", c, d, max(c, d));
+    printf("Min(%f, %f) = %f\n", c, d, min(c, d));
 
     printf("-> \n");
 }
