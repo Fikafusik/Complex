@@ -2,6 +2,7 @@
 #include <cstdio>
 #include "mathematics.hpp"
 #include "algorithms.hpp"
+#include "combinatorics.hpp"
 
 double sqr(double n) {
     return n * n;
@@ -70,13 +71,13 @@ double sin(double a) {
     }
 }*/
 
-//(not)Fast but incorrect
+//Fast but incorrect
 double sin(double a) {
-    double last = a;
-    double res;
-    double x = a;
+    double last;
+    double res = a;
+    double x;
     double sign = 1;
-    double factorial = 1;
+    double factorial;
     double n = 1;
     const double sqrA = a * a;
 
@@ -84,14 +85,17 @@ double sin(double a) {
         ++n;
         last = res;
         sign *= -1;
-        x *= sqrA;
-        factorial *= (2 * n - 1) * (2 * n - 2);
+        x = binary_power_iterative(a, n + 1);
+        //factorial = factorial_iterative(2 * n - 1);
+        factorial = 1;
+        for (int i = 2; i < (2 * n - 1); ++i) factorial *= i;
 
         res = last + ((x * sign) / factorial);
-        
-        printf("%f\n", res);
-    } while (last != res);
 
+        printf("a\t\t= %f\nx\t\t= %f\nsign\t\t= %f\nn\t\t= %f\nfactorial\t= %f\n\nlast res\t= %f\nresult\t\t= %f\n\n", a, x, sign, n, factorial, last, res);
+    } while (res != last);
+
+    printf("\n");
     return res;
 }
 
