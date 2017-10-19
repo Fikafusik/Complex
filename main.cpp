@@ -30,9 +30,7 @@ void mathematics_test() {
 
     printf("%f\t%f\t%f\n", r, s, c);
 
-    const double pi = 3.14159265358979323846;
-
-    double a1 = pi / 2;
+    double a1 = 500 * pi / 2;
     double a2 = pi / 3;
     double a3 = pi / 6;
 
