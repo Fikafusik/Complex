@@ -1,6 +1,8 @@
 
+#include <cstdio>
 #include "mathematics.hpp"
 #include "algorithms.hpp"
+#include "combinatorics.hpp"
 
 double sqr(double n) {
     return n * n;
@@ -52,7 +54,7 @@ double cbrt(double a) {
 
 //Trigonometry:
 const double pi = 3.14159265358979323846;
-
+/*Correct but slow
 double sin(double a) {
     double last;
     double res;
@@ -67,6 +69,34 @@ double sin(double a) {
         else 
             last = res;
     }
+}*/
+
+//Fast but incorrect
+double sin(double a) {
+    double last;
+    double res = a;
+    double x;
+    double sign = 1;
+    double factorial;
+    double n = 1;
+    const double sqrA = a * a;
+
+    do {
+        ++n;
+        last = res;
+        sign *= -1;
+        x = binary_power_iterative(a, n + 1);
+        //factorial = factorial_iterative(2 * n - 1);
+        factorial = 1;
+        for (int i = 2; i < (2 * n - 1); ++i) factorial *= i;
+
+        res = last + ((x * sign) / factorial);
+
+        printf("a\t\t= %f\nx\t\t= %f\nsign\t\t= %f\nn\t\t= %f\nfactorial\t= %f\n\nlast res\t= %f\nresult\t\t= %f\n\n", a, x, sign, n, factorial, last, res);
+    } while (res != last);
+
+    printf("\n");
+    return res;
 }
 
 double cos(double a) {
