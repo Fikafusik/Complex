@@ -28,18 +28,17 @@ void mathematics_test() {
     double s = sqrt(b);
     double c = cbrt(b);
 
-    printf("%f\t%f\t%f\n", r, s, c);
+    printf("%f\t%f\t%f\n\n", r, s, c);
 
     const double pi = 3.14159265358979323846;
 
-    double a1 = pi / 2;
-    double a2 = pi / 3;
-    double a3 = pi / 6;
+    double a1 = 0;
+    double a2 = pi / 6;
+    double a3 = pi / 4;
+    double a4 = pi / 3;
+    double a5 = pi / 2;
 
-    printf("%f\t%f\t%f\n", sin(a1), sin(a2), sin(a3));
-    printf("%f\t%f\t%f\n", cos(a1), cos(a2), cos(a3));
-    printf("%f\t%f\t%f\n", tan(a1), tan(a2), tan(a3));
-    printf("%f\t%f\t%f\n", cot(a1), cot(a2), cot(a3));
+    printf("%f\n%f\n%f\n%f\n%f\n", sin(a1), sin(a2), sin(a3), sin(a4), sin(a5));
 
     printf("-> \n");
 }
