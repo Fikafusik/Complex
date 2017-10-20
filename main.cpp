@@ -2,17 +2,21 @@
 #include <cstdio>
 #include "mathematics.hpp"
 #include "algorithms.hpp"
+#include "primes.hpp"
 
-void mathematics_test();
-void algorithms_test();
+void test_mathematics();
+void test_algorithms();
+void test_primes();
 
 int main() {
-    mathematics_test();
-    algorithms_test();
+    test_mathematics();
+    test_algorithms();
+    test_primes();
+    return 0;
 }
 
-void mathematics_test() {
-    printf("-> Hello, I'm mathematics_test()!\n");
+void test_mathematics() {
+    printf("-> Hello, I'm test_mathematics()!\n");
 
     const double a = 1.01;
     const int n = 1000;
@@ -44,8 +48,8 @@ void mathematics_test() {
     printf("-> \n");
 }
 
-void algorithms_test() {
-    printf("-> Hello, I'm algorithms_test()!\n");
+void test_algorithms() {
+    printf("-> Hello, I'm test_algorithms()!\n");
 
     int a = 5;
     int b = 10;
@@ -68,5 +72,21 @@ void algorithms_test() {
     printf("Max(%f, %f) = %f\n", c, d, max(c, d));
     printf("Min(%f, %f) = %f\n", c, d, min(c, d));
 
+    printf("-> \n");
+}
+
+void test_primes() {
+    printf("-> Hello, I'm test_primes()!\n");
+    
+    const int max_number = 100;
+
+    sieve_of_eratosthenes   sieve_1(max_number);
+    sieve_of_sundaram       sieve_2(max_number);
+    sieve_of_atkin          sieve_3(max_number);
+    
+    for (int i = 1; i <= max_number; ++i) {
+        if (sieve_1.is_prime(i) != sieve_3.is_prime(i))
+            printf("%d\t%s\t%s\n", i, sieve_1.is_prime(i) ? "true" : "false", sieve_3.is_prime(i) ? "true" : "false");
+    }
     printf("-> \n");
 }

@@ -14,9 +14,15 @@ class sieve_of_sundaram {
 private:
     bool* sieve;
 public:
-    // TODO:
     sieve_of_sundaram(int);
-    // TODO:
+    bool is_prime(int);
+};
+
+class sieve_of_atkin {
+private:
+    bool* sieve;
+public:
+    sieve_of_atkin(int);
     bool is_prime(int);
 };
 
