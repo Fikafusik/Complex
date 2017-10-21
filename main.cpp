@@ -80,13 +80,17 @@ void test_primes() {
     
     const int max_number = int(1e+6);
 
-    sieve_of_eratosthenes   sieve_1(max_number);
-    sieve_of_sundaram       sieve_2(max_number);
-    sieve_of_atkin          sieve_3(max_number);
+    sieve_of_eratosthenes   sieve1(max_number);
+    sieve_of_sundaram       sieve2(max_number);
+    sieve_of_atkin          sieve3(max_number);
     
-    for (int i = 0; i <= max_number; ++i) {
-        if (sieve_2.is_prime(i) != sieve_3.is_prime(i))
-            printf("%d\t%s\t%s\n", i, sieve_2.is_prime(i) ? "true" : "false", sieve_3.is_prime(i) ? "true" : "false");
+    printf("%10s%15s%15s%15s\n", "Number", "Eratosthenes", "Sundaram", "Atkin");
+    for (int number = 0; number <= max_number; ++number) {
+        bool ip1 = sieve1.is_prime(number);
+        bool ip2 = sieve2.is_prime(number);
+        bool ip3 = sieve3.is_prime(number);
+        if (ip1 != ip2 || ip1 != ip3 || ip2 != ip3)
+            printf("%10d%15s%15s%15s", number, (ip1 ? "prime" : "not prime"), (ip2 ? "prime" : "not prime"), (ip3 ? "prime" : "not prime"));
     }
 
     printf("-> \n");
