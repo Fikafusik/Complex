@@ -78,15 +78,16 @@ void test_algorithms() {
 void test_primes() {
     printf("-> Hello, I'm test_primes()!\n");
     
-    const int max_number = 100;
+    const int max_number = int(1e+6);
 
     sieve_of_eratosthenes   sieve_1(max_number);
     sieve_of_sundaram       sieve_2(max_number);
     sieve_of_atkin          sieve_3(max_number);
     
-    for (int i = 1; i <= max_number; ++i) {
-        if (sieve_1.is_prime(i) != sieve_3.is_prime(i))
-            printf("%d\t%s\t%s\n", i, sieve_1.is_prime(i) ? "true" : "false", sieve_3.is_prime(i) ? "true" : "false");
+    for (int i = 0; i <= max_number; ++i) {
+        if (sieve_2.is_prime(i) != sieve_3.is_prime(i))
+            printf("%d\t%s\t%s\n", i, sieve_2.is_prime(i) ? "true" : "false", sieve_3.is_prime(i) ? "true" : "false");
     }
+
     printf("-> \n");
 }
