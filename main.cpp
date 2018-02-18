@@ -75,6 +75,7 @@ void test_algorithms() {
     printf("\n");
     int arr1[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
     int arr2[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
+    int arr3[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
     for (int i = 0; i < 10; i++) printf("%d ", arr1[i]);
     printf("\n");
     printf("Sort_stupid:\n");
@@ -85,7 +86,11 @@ void test_algorithms() {
     sort_selection(arr2, 0, 9);
     for (int i = 0; i < 10; i++) printf("%d ", arr2[i]);
     printf("\n");
-    
+    printf("Sort_insertion:\n");
+    sort_insertion(arr3, 0, 9);
+    for (int i = 0; i < 10; i++) printf("%d ", arr2[i]);
+    printf("\n");
+
     printf("-> \n");
 }
 
