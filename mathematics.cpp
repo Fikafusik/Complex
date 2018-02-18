@@ -2,7 +2,6 @@
 #include <cstdio>
 #include "mathematics.hpp"
 #include "algorithms.hpp"
-#include "combinatorics.hpp"
 
 const double pi = 3.141592653589793;
 

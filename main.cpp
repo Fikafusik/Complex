@@ -3,15 +3,19 @@
 #include "mathematics.hpp"
 #include "algorithms.hpp"
 #include "primes.hpp"
+#include "array.hpp"
 
 void test_mathematics();
 void test_algorithms();
 void test_primes();
+void test_array();
 
 int main() {
     test_mathematics();
     test_algorithms();
     test_primes();
+    test_array();
+
     return 0;
 }
 
@@ -78,8 +82,8 @@ void test_algorithms() {
 void test_primes() {
     printf("-> Hello, I'm test_primes()!\n");
     
-    const int max_number = int(1e+6);
-
+    const int max_number = int(1e+7);
+       
     sieve_of_eratosthenes   sieve1(max_number);
     sieve_of_sundaram       sieve2(max_number);
     sieve_of_atkin          sieve3(max_number);
@@ -90,8 +94,28 @@ void test_primes() {
         bool ip2 = sieve2.is_prime(number);
         bool ip3 = sieve3.is_prime(number);
         if (ip1 != ip2 || ip1 != ip3 || ip2 != ip3)
-            printf("%10d%15s%15s%15s", number, (ip1 ? "prime" : "not prime"), (ip2 ? "prime" : "not prime"), (ip3 ? "prime" : "not prime"));
+            printf("%10d%15s%15s%15s", number,  (ip1 ? "prime" : "not prime"), 
+                                                (ip2 ? "prime" : "not prime"), 
+                                                (ip3 ? "prime" : "not prime"));
     }
+
+    printf("-> \n");
+}
+
+void test_array() {
+    printf("-> Hello, I'm test_array()!\n");
+    
+    const int n = 7;
+
+    array<double>   arr(n);
+    double          brr[n];
+    
+    arr[0] = 4.2;
+    arr[n - 1] = 2.4;
+
+    for (int i = 0; i < n; ++i)
+        printf("%f\t", arr[i]);
+    printf("\n");
 
     printf("-> \n");
 }

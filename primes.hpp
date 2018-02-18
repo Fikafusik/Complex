@@ -8,6 +8,7 @@ private:
 public:
     sieve_of_eratosthenes(int);
     bool is_prime(int);
+    ~sieve_of_eratosthenes();
 };
 
 class sieve_of_sundaram {
@@ -16,6 +17,7 @@ private:
 public:
     sieve_of_sundaram(int);
     bool is_prime(int);
+    ~sieve_of_sundaram();
 };
 
 class sieve_of_atkin {
@@ -24,6 +26,7 @@ private:
 public:
     sieve_of_atkin(int);
     bool is_prime(int);
+    ~sieve_of_atkin();
 };
 
 #endif

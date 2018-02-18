@@ -17,6 +17,10 @@ bool sieve_of_eratosthenes::is_prime(int number) {
     return !sieve[number];
 }
 
+sieve_of_eratosthenes::~sieve_of_eratosthenes() {
+    delete []sieve;
+}
+
 sieve_of_sundaram::sieve_of_sundaram(int max_number) {
     sieve = new bool[max_number + 1];
     sieve[2] = true;
@@ -28,11 +32,15 @@ sieve_of_sundaram::sieve_of_sundaram(int max_number) {
     for (int i = 1; i <= max_number; ++i)
         if (!_sieve[i]) 
             sieve[2 * i + 1] = true;
-    delete [] _sieve;
+    delete []_sieve;
 }
 
 bool sieve_of_sundaram::is_prime(int number) {
     return sieve[number];
+}
+
+sieve_of_sundaram::~sieve_of_sundaram() {
+    delete []sieve;
 }
 
 sieve_of_atkin::sieve_of_atkin(int max_number) {
@@ -60,4 +68,8 @@ sieve_of_atkin::sieve_of_atkin(int max_number) {
 
 bool sieve_of_atkin::is_prime(int number) {
     return sieve[number];
+}
+
+sieve_of_atkin::~sieve_of_atkin() {
+    delete [] sieve;
 }
