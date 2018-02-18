@@ -76,6 +76,25 @@ void test_algorithms() {
     printf("Max(%f, %f) = %f\n", c, d, max(c, d));
     printf("Min(%f, %f) = %f\n", c, d, min(c, d));
 
+    printf("\n");
+    int arr1[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
+    int arr2[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
+    int arr3[10] = {3, 1, 5, 2, 6, 8, 4, 9, 7, 0};
+    for (int i = 0; i < 10; i++) printf("%d ", arr1[i]);
+    printf("\n");
+    printf("Stupid sort:\n");
+    sort_stupid(arr1, 0, 9);
+    for (int i = 0; i < 10; i++) printf("%d ", arr1[i]);
+    printf("\n");
+    printf("Selection sort:\n");
+    sort_selection(arr2, 0, 9);
+    for (int i = 0; i < 10; i++) printf("%d ", arr2[i]);
+    printf("\n");
+    printf("Insertion sort:\n");
+    sort_insertion(arr3, 0, 9);
+    for (int i = 0; i < 10; i++) printf("%d ", arr3[i]);
+    printf("\n");
+
     printf("-> \n");
 }
 
