@@ -20,6 +20,9 @@ void sort_selection(T a[], int l, int r);
 template <class T>
 void sort_insertion(T a[], int l, int r);
 
+template <class T>
+void sort_bubble(T a[], int l, int r);
+
 template <class T> 
 void swap(T &a, T &b) {
     T t;
@@ -56,6 +59,7 @@ void sort_selection(T a[], int l, int r){
     }
 }
 
+//Not working, debug later
 template <class T>
 void sort_insertion(T a[], int l, int r) {
     for (int i = r; i > l; i--)
