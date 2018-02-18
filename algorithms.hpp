@@ -33,20 +33,31 @@ void swap(T &a, T &b) {
 }
 
 template <class T> 
-T max (T a, T b) {
+T max(T a, T b) {
     return (a > b ? a : b);
 }
 
 template <class T> 
-T min (T a, T b) {
+T min(T a, T b) {
     return (a < b ? a : b);
 }
 
 template <class T>
+// [l; r], [l; r), (l; r], (l; r)?
 void sort_stupid(T a[], int l, int r) {
     for (int i = l + 1; i <= r; i++)
         for (int j = i; j > l; j--)
-            if (a[j - 1] > a[j]) swap(a[j - 1], a[j]);
+            // If T is uncomparable type?
+            if (a[j - 1] > a[j]) 
+                swap(a[j - 1], a[j]);
+    // I don't understand, what you mean.
+    /*
+    [l; r)
+    for (int i = l; i < r; ++i)
+        for (int j = i + 1; j < r; ++j)
+            if compare(a[i], a[j]) < 0 
+                swap(a[i], a[j]);
+    */
 }
 
 template <class T>
