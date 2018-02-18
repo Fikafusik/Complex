@@ -44,6 +44,7 @@ T min(T a, T b) {
 
 template <class T>
 // [l; r], [l; r), (l; r], (l; r)?
+// is it working?
 void sort_stupid(T a[], int l, int r) {
     for (int i = l + 1; i <= r; i++)
         for (int j = i; j > l; j--)
@@ -74,7 +75,8 @@ void sort_selection(T a[], int l, int r){
 template <class T>
 void sort_insertion(T a[], int l, int r) {
     for (int i = r; i > l; i--)
-        if (a[i - 1] < a[i]) swap(a[i - 1], a[i]);
+        if (a[i - 1] < a[i]) 
+            swap(a[i - 1], a[i]);
     for (int i = l + 2; i <= r; i++) {
         int j = i;
         T v = a[i];
