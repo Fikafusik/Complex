@@ -2,6 +2,12 @@
 #ifndef __ALGORITHMS_HPP__
 #define __ALGORITHMS_HPP__
 
+//  ----    ----    ----    ----    ----    ----    ----    ----
+//
+//                      DECLARATION
+//
+//  ----    ----    ----    ----    ----    ----    ----    ----
+
 template <class T> 
 void swap(T &, T &);
 
@@ -23,13 +29,17 @@ void sort_insertion(T a[], int l, int r);
 template <class T>
 void sort_bubble(T a[], int l, int r);
 
+//  ----    ----    ----    ----    ----    ----    ----    ----
+//
+//                      IMPLEMETATION
+//
+//  ----    ----    ----    ----    ----    ----    ----    ----
+
 template <class T> 
 void swap(T &a, T &b) {
-    T t;
-    t = a;
+    T t = a;
     a = b;
     b = t;
-    return;
 }
 
 template <class T> 
